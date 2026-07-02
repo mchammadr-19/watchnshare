@@ -858,7 +858,7 @@ export default function App() {
 
           <button 
             onClick={() => setShowDonateModal(true)} 
-            className="px-4 py-1.5 bg-red-600/10 hover:bg-red-600/20 text-red-500 rounded-full border border-red-500/20 transition-all text-xs font-bold"
+            className="px-4 py-1.5 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 rounded-full border border-yellow-500/20 transition-all text-xs font-bold"
           >
             <span>Donate</span>
           </button>
@@ -903,7 +903,7 @@ export default function App() {
               onBlur={() => setTimeout(() => setIsFocused(false), 200)}
               onChange={(e) => setQuery(e.target.value)} 
               autoComplete="off"
-              className="w-full bg-neutral-900/40 border border-white/15 rounded-3xl py-5 pl-14 pr-6 focus:ring-2 focus:ring-red-500 outline-none text-lg transition-all shadow-2xl font-inter placeholder:text-neutral-500" 
+              className="w-full bg-neutral-900/40 border border-white/15 rounded-3xl py-5 pl-14 pr-6 focus:ring-2 focus:ring-yellow-500 outline-none text-lg transition-all shadow-2xl font-inter placeholder:text-neutral-500" 
             />
             <div className="absolute left-5 top-1/2 -translate-y-1/2 text-neutral-400">
               <Search size={22} />
@@ -937,18 +937,18 @@ export default function App() {
         {/* Loading State */}
         {loading ? (
           <div className="flex flex-col items-center justify-center py-24 gap-4">
-            <div className="w-12 h-12 border-2 border-red-500 border-t-transparent rounded-full animate-spin"></div>
+            <div className="w-12 h-12 border-2 border-yellow-500 border-t-transparent rounded-full animate-spin"></div>
             <p className="text-neutral-500 text-sm font-medium uppercase tracking-widest font-inter">Fetching data...</p>
           </div>
         ) : error ? (
-          <div className="bg-red-500/10 border border-red-500/20 text-red-400 p-6 rounded-2xl flex items-start gap-3 max-w-xl mx-auto my-12">
+          <div className="bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 p-6 rounded-2xl flex items-start gap-3 max-w-xl mx-auto my-12">
             <AlertTriangle className="shrink-0 mt-0.5" />
             <div className="space-y-2">
               <h4 className="font-bold">{!apiKey ? 'API Key Required' : 'Error Connecting to TMDB'}</h4>
               <p className="text-sm text-neutral-300 leading-relaxed">{error}</p>
               <button 
                 onClick={() => setShowKeyModal(true)} 
-                className="text-xs text-red-400 underline font-bold hover:text-red-300 block"
+                className="text-xs text-yellow-400 underline font-bold hover:text-yellow-300 block"
               >
                 {!apiKey ? 'Configure TMDb API Key' : 'Update / Change TMDB API Key'}
               </button>
@@ -1227,19 +1227,19 @@ export default function App() {
               <div className="space-y-4 text-left">
                 <div className="bg-neutral-950/80 border border-white/5 rounded-2xl p-4 space-y-3">
                   <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-red-600/10 border border-red-500/20 flex items-center justify-center font-bold text-xs text-red-500">1</span>
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center font-bold text-xs text-yellow-500">1</span>
                     <p className="text-xs text-neutral-300 font-inter leading-relaxed">
                       Make sure you are browsing in <span className="text-white font-semibold">Safari</span>.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-red-600/10 border border-red-500/20 flex items-center justify-center font-bold text-xs text-red-500">2</span>
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center font-bold text-xs text-yellow-500">2</span>
                     <p className="text-xs text-neutral-300 font-inter leading-relaxed flex items-center gap-1.5 flex-wrap">
-                      Tap the <span className="text-white font-semibold flex items-center gap-1 bg-white/5 border border-white/10 px-1.5 py-0.5 rounded text-[11px]">Share <Share2 size={10} className="inline text-red-500" /></span> icon at the bottom of Safari.
+                      Tap the <span className="text-white font-semibold flex items-center gap-1 bg-white/5 border border-white/10 px-1.5 py-0.5 rounded text-[11px]">Share <Share2 size={10} className="inline text-yellow-500" /></span> icon at the bottom of Safari.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-red-600/10 border border-red-500/20 flex items-center justify-center font-bold text-xs text-red-500">3</span>
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center font-bold text-xs text-yellow-500">3</span>
                     <p className="text-xs text-neutral-300 font-inter leading-relaxed flex items-center gap-1.5 flex-wrap">
                       Scroll down and select <span className="text-white font-semibold flex items-center gap-1 bg-white/5 border border-white/10 px-1.5 py-0.5 rounded text-[11px]">Add to Home Screen <Plus size={10} className="inline text-green-500" /></span>.
                     </p>
@@ -1477,7 +1477,7 @@ export default function App() {
                         checked={showSeasonEpisode} 
                         onChange={() => setShowSeasonEpisode(!showSeasonEpisode)} 
                       />
-                      <div className="w-11 h-6 bg-neutral-800 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500 peer-checked:after:bg-black"></div>
+                      <div className="w-11 h-6 bg-neutral-800 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-yellow-500 peer-checked:after:bg-black"></div>
                     </label>
                   </div>
                   {showSeasonEpisode && (
